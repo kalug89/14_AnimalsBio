@@ -1,5 +1,6 @@
 package pl.dkaluzny.animalsbio
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -10,9 +11,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             chetachId.id -> {
+                var chetahIntent = Intent(this, DetailActivity::class.java)
+                chetahIntent.putExtra("animal", "cheetah")
+                startActivity(chetahIntent)
+
                 Toast.makeText(this, "Cheetah", Toast.LENGTH_LONG).show()
             }
             lionId.id -> {
+                var lionIntent = Intent(this, DetailActivity::class.java)
+                lionIntent.putExtra("animal", "lion")
+                startActivity(lionIntent)
+
                 Toast.makeText(this, "Lion", Toast.LENGTH_LONG).show()
             }
         }
